@@ -543,7 +543,12 @@ $lang = array (
 'admin_logs_all'		=>	"List of All Actions in Administration Panel.",
 'admin_logs_auth'		=>	"List of Failed Attempts of User Authorization to Administration Panel.",
 'opt_sys_own404'		=>	"Use a separate page for 404 errors",
-'opt_sys_own404d'		=>	"When this option is enabled, if the engine needs to display a message that the content is missing, then instead of embedded system message a separate page is used for this which must be located in the root directory of your website and named 404.html. For example, your page should be located at http://yoursite.com/404.html",
+'opt_sys_own404d'		=>	"When this option is enabled, if the engine needs to display a message that the content is missing, then instead of embedded system message a separate page is used for this which must be located in the root directory of your website and named 404.html. For example, your page should be located at http://yoursite.com/404.html
+
+
+
+
+",
 'settings_panel_9'		=>	"Colors",
 'opt_sys_ownip'			=>	"HTTP header to get the user's IP address from",
 'opt_sys_ownipd'		=>	"By default, the engine gets IP addresses of visitors from the global header REMOTE_ADDR, and this is a safe and secure way. Leave this setting empty, to leave default settings. However, when using various proxy services such as DDOS protection, you need to obtain IP addresses from other headers. Here you can specify the header where you need to get IP from, for example, HTTP_X_FORWARDED_FOR. Your IP address received with this setting is:",
