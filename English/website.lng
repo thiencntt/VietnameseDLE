@@ -468,7 +468,7 @@ $lang = array (
 'feed_err_8'		=>	"<li>You cannot send e-mail messages to this user.</li>",
 'bb_flash'				=>	"Enter the dimensions of the flash movie (width, height) ",
 'bb_flash_url'			=>	"Enter URL of the flash movie ",
-'inset_flash_link'		=>	"inert a flash movie",
+'inset_flash_link'		=>	"insert a flash movie",
 // 8.0
 
 // 7.5
@@ -693,7 +693,7 @@ $lang = array (
 'bb_b_up'			=>	"Uploading",
 'next_moth'			=>	"Next month",
 'prev_moth'			=>	"Previous month",
-'cal_post'			=>	"Al posts for",
+'cal_post'			=>	"All posts for",
 'title_users'		=>	"Users",
 'title_new'			=>	"Unread",
 'title_date'		=>	"Materials for",

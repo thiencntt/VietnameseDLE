@@ -1,186 +1,187 @@
 <?php
 
-$help_sections['title']['templates'] ="Templates";
+$help_sections['title']['templates'] ="Giao diện";
 $help_sections['body']['templates'] = <<<HTML
-Templates are used to change the view of news. You can change various parts of the template that are used to display different parts of the news. For example, "Article Annotation" is used to change the look of active news, "Full Article" is used to change the look of the full article, "Comments" is used to change the look of comments, etc.<br><br>
-You can use HTML to change the various structures when you edit the part of a template. You need to add some special symbols in your templates to define the place for a news title, author’s name, date, etc. Each part of the pattern corresponds to a specific designation.<br>
-Values of the variables can be viewed on the template edit page. Click on the name of the template part to access this page. For example: <b>{title}</b> is the title of the article, <b>{author}</b> is the article’s author, etc.<br><br>
-You can use several different templates.
+Giao diện được sử dụng để thay đổi hiển thị của bài viết. Bạn có thể thay đổi các phần khác nhau của giao diện được sử dụng để hiển thị các phần khác nhau của bài viết. Ví dụ: "Bài viết ngắn" được sử dụng để thay đổi giao diện của bài viết đang hoạt động, "Bài viết đầy đủ" được sử dụng để thay đổi giao diện của toàn bộ bài viết, "Bình luận" được sử dụng để thay đổi giao diện của bình luận, v.v.<br /><br />
+Bạn có thể sử dụng HTML để thay đổi các cấu trúc khác nhau khi bạn chỉnh sửa một phần của giao diện. Bạn cần thêm một số ký hiệu đặc biệt trong các giao diện để xác định vị trí cho tiêu đề bài viết, tên tác giả, ngày, v.v. Mỗi phần của giao diện tương ứng với một chỉ định cụ thể.<br />
+Giá trị của các biến có thể được xem trên trang chỉnh sửa giao diện. Nhấn vào tên của phần giao diện để truy cập trang này. Ví dụ: <b>{title}</b> là tiêu đề của bài viết, <b>{author}</b> là bài viết của tác giả, v.v.<br /><br />
+Bạn có thể sử dụng một số giao diện khác nhau.
 HTML;
 
-$help_sections['title']['xfields'] ="Extra Fields";
+$help_sections['title']['xfields'] ="Field bổ sung";
 $help_sections['body']['xfields'] = <<<HTML
-Extra fields can be enabled via <b>Settings</b> &gt; <b>Extra Fields</b>. This feature is useful, for example, when publishing a reference to the original source in the article. <br>
-Add a new field by clicking on the "Add Field".  On the next page you must enter a unique name for the field, description of the field, and the content of the field by default. You also need to choose whether you want to use optional fields. If you will not use a field like that, you can just leave it blank when you add/edit the article. The module will not be included in this case.<br><br>
-If you want to use this field on the news page, you need to add a variable <b>[xfvalue_X]</b> to the template, where <b>X</b> - is a value of the field (the name that you have entered when you added a new field). You can also use <b>[xfgiven_X]...[/xfgiven_X]</b> which displays the text specified between them if the additional field has been set. Also you can use <b>[xfnotgiven_X]...[/xfnotgiven_X]</b> which displays the text specified between them if the additional field has not been set.<br><br>
-Example:
+Các field bổ sung có thể được thiết lập thông qua <b>Cấu hình hệ thống</b> &gt; <b>Quản lý các field bổ sung cho các bài viết</b>. Chức năng này rất hữu ích khi đăng bài viết, ví dụ: thêm liên kết đến nguồn lấy thông tin.<br />
+Thêm một field mới bằng cách nhấp vào "Thêm field". Trên trang tiếp theo, bạn phải nhập một tên duy nhất cho field, mô tả field và nội dung của field theo mặc định. Bạn cũng cần chọn xem bạn có muốn sử dụng field tùy chọn không (Người đăng bài có thể để trống field này). Nếu bạn cho phép người dùng để trống khi thêm/chỉnh sửa bài viết, mô-đun sẽ không bật.<br /><br />
+Nếu bạn muốn sử dụng field này trên bài viết, bạn cần thêm biến <b>[xfvalue_X]</b> vào giao diện, với <b>X</b> - là giá trị của field (Tên mà bạn đã nhập khi bạn thêm một field mới). Bạn cũng có thể dùng <b>[xfgiven_X]...[/xfgiven_X]</b> sẽ hiển thị văn bản giữa chúng nếu field bổ sung có dữ liệu nhập vào. Ngoài ra bạn có thể sử dụng <b>[xfnotgiven_X]...[/xfnotgiven_X]</b> sẽ hiển thị văn bản giữa chúng nếu field bổ sung chưa dữ liệu nhập vào.<br /><br />
+Ví dụ:
 <div class="code">
-<b>1)</b>- Field name: stit<br>
-&nbsp;&nbsp;- Description: Information Source<br>
-&nbsp;&nbsp;- Default Value: Me<br>
-&nbsp;&nbsp;- Optional: yes<br>
-<b>2)</b>- Field name: source<br>
-&nbsp;&nbsp;- Description: Link to the Information Source <br>
-&nbsp;&nbsp;- Default Value: http://server.com/<br>
-&nbsp;&nbsp;- Optional: yes<br><br>
-[xfgiven_source]Source - &lt;a href=[xfvalue_source] target=_blank&gt;[xfvalue_stit]&lt;/a&gt;.[/xfgiven_source]<br>
-[xfnotgiven_source]Source Not Specified[/xfnotgiven_source]</div>
-If this field has been set during the publication, then the following HTML-code will be shown as a result:
-<div class="code">Source - &lt;a href=http://server.com/ target=_blank&gt;Me&lt;/a&gt;.</div>
-If this field has not been set during the publication, then you’ll see this:
-<div class="code"> Source Not Specified </div>
-Remember that only Latin characters and numbers can be used for the field name of the field.
+<b>1)</b>- Tên field: stit<br />
+&nbsp;&nbsp;- Mô tả field: Nguồn thông tin<br />
+&nbsp;&nbsp;- Giá trị mặc định: DLEVIET<br />
+&nbsp;&nbsp;- Người đăng bài có thể để trống field này: yes<br />
+<b>2)</b>- Tên field: source<br />
+&nbsp;&nbsp;- Mô tả field: Liên kết đến Nguồn thông tin<br />
+&nbsp;&nbsp;- Giá trị mặc định: https://dleviet.com<br />
+&nbsp;&nbsp;- Người đăng bài có thể để trống field này: yes<br /><br />
+[xfgiven_source]Nguồn lấy thông tin bài viết - &lt;a href=[xfvalue_source] target=_blank&gt;[xfvalue_stit]&lt;/a&gt;.[/xfgiven_source]<br />
+[xfnotgiven_source]Nguồn thông tin tự tác giả viết[/xfnotgiven_source]</div>
+Nếu field này được nhập thông tin trong quá trình đăng bài viết, thì mã HTML sau sẽ được hiển thị dưới dạng:
+<div class="code">Nguồn lấy thông tin bài viết - &lt;a href=https://dleviet.com target=_blank&gt;DLEVIET&lt;/a&gt;.</div>
+Nếu field này không được nhập thông tin trong quá trình đăng bài viết, bạn sẽ thấy:
+<div class="code">Nguồn thông tin tự tác giả viết</div>
+Hãy nhớ rằng chỉ các ký tự Latin và số được phép sử dụng cho tên field.
 HTML;
 
-$help_sections['title']['xprofile'] ="Extra Fields in users profiles";
+$help_sections['title']['xprofile'] ="Các field bổ sung trong hồ sơ người dùng";
 $help_sections['body']['xprofile'] = <<<HTML
-This function is used to add new fields to the user profile in addition to existing ones.<br><br>
-Add a new field by clicking on the "Add Field". On the next page you must enter a unique name for the field and a field description. You also need to choose whether you want to allow the user to add additional information during the registration, whether the field is purely personal, as well as whether the user can further edit the contents of this field.<br><br>
-Additional fields are available when viewing comments and user profile. You need to add [xfvalue_X] to the templates, where X – is a value of the field (the name that you have entered when you added a new field). You can also use [xfgiven_X]...[/xfgiven_X].<br><br>
-Example:
+Chức năng này được sử dụng để thêm các field mới vào hồ sơ người dùng, ngoài các thông tin chính đã có.<br /><br />
+Thêm một field mới bằng cách nhấp vào "Thêm field". Trên trang tiếp theo, bạn phải nhập tên duy nhất cho field và mô tả field. Bạn cũng cần chọn xem bạn có muốn cho phép người dùng thêm thông tin bổ sung trong quá trình đăng ký hay không, liệu field đó là cá nhân riêng tư không, cũng như người dùng có thể chỉnh sửa nội dung của field này hay không.<br /><br />
+Các field bổ sung có sẵn khi xem bình luận và hồ sơ người dùng. Bạn cần phải thêm [xfvalue_X] vào giao diện, với X – là giá trị của field (Tên mà bạn đã nhập khi bạn thêm một field mới). Ngoài ra bạn có thể sử dụng [xfgiven_X]...[/xfgiven_X].<br /><br />
+Ví dụ:
 <div class="code">
-&nbsp;&nbsp;- Field name: city<br>
-&nbsp;&nbsp;- Description: City<br>
-&nbsp;&nbsp;- Filed Type: One Srting<br>
-&nbsp;&nbsp;- Add to the registration page: yes<br>
-&nbsp;&nbsp;- Field can be changed by the user: yes<br>
-&nbsp;&nbsp;- Make this field personal: no<br><br>
-in comments.tpl and userinfo.tpl you need to add<br>
-[xfgiven_city] City: [xfvalue_city] [/xfgiven_city]</div>
-If user adds any city in user profile, for example "Moscow", then the following HTML-code will appear as the result:
-<div class="code">City: Moscow</div>
-Remember that only Latin characters and numbers can be used for the title of the field.
+&nbsp;&nbsp;- Tên field: city<br />
+&nbsp;&nbsp;- Mô tả field: City<br />
+&nbsp;&nbsp;- Loại field: One String<br />
+&nbsp;&nbsp;- Thêm vào trang đăng ký?: yes<br />
+&nbsp;&nbsp;- Người dùng có thể chỉnh sửa field này không?: yes<br />
+&nbsp;&nbsp;- Đặt field này thành riêng tư?: no<br /><br />
+trong comments.tpl và userinfo.tpl, bạn cần thêm<br />
+[xfgiven_city] Thành phố: [xfvalue_city] [/xfgiven_city]</div>
+Nếu người dùng thêm bất kỳ thành phố nào trong hồ sơ người dùng, ví dụ "Moscow", kết quả mã HTML sau sẽ xuất hiện: 
+<div class="code">Thành phố: Moscow</div>
+Hãy nhớ rằng chỉ các ký tự Latin và số được phép sử dụng cho tên field.
 HTML;
 
-$help_sections['title']['banners'] ="Advertising Management";
+$help_sections['title']['banners'] ="Quản lý Quảng cáo";
 $help_sections['body']['banners'] = <<<HTML
-This module is designed to place and manage your advertising materials on this site quick and easy. You only need to add the tag of the banner into the template to place your banner on the website. After that you will be able to change or edit the banner code in Administration Panel, without touching templates.<br /><br />
-After you add your banner, you can place it’s tag into <b>main.tpl</b> or <b>fullstory.tpl</b> templates. If you want to add the banner between the articles’ annotations, then you don’t need to add this tag. It will be placed there automatically.
-<br />Example:
+Mô-đun này được thiết kế để đặt và quản lý quảng cáo trên trang web nhanh chóng và dễ dàng. Bạn chỉ cần thêm thẻ của banner vào giao diện để đặt banner của bạn trên trang web. Sau đó, bạn sẽ có thể thay đổi hoặc chỉnh sửa mã banner trong Bảng quản trị mà không cần chỉnh sửa trong giao diện.<br /><br />
+Sau khi bạn thêm banner của mình, bạn có thể đặt thẻ đó vào tập tin giao diện <b>main.tpl</b> hoặc <b>fullstory.tpl</b>. Nếu bạn muốn thêm banner giữa các bài viết ngắn, thì bạn không cần phải thêm thẻ này. Nó sẽ được đặt ở đó tự động.
+<br />Ví dụ:
 <div class="code">
-&nbsp;&nbsp;- Title: header<br>
-&nbsp;&nbsp;- Description: Top Banner<br>
-&nbsp;&nbsp;- Enable banner display: Yes<br>
-&nbsp;&nbsp;- Show only on the Homepage: No<br>
-&nbsp;&nbsp;- Fix location: No<br>
-&nbsp;&nbsp;- Place between the short articles: No<br><br>
-After than you can add your banner’s tag <b>{banner_header}</b> into <b>main.tpl</b> or <b>fullstory.tpl</b>. <br />
+&nbsp;&nbsp;- Tên của banner: header<br />
+&nbsp;&nbsp;- Mô tả của banner: Top Banner<br />
+&nbsp;&nbsp;- Cho phép hiển thị banner: Yes<br />
+&nbsp;&nbsp;- Chỉ hiển thị trên Trang chủ: No<br />
+&nbsp;&nbsp;- Cố định vị trí: No<br />
+&nbsp;&nbsp;- Hiển thị xen kẽ giữa các bài viết ngắn: Không<br /><br />
+Bạn có thể thêm thẻ banner <b>{banner_header}</b> vào tập tin <b>main.tpl</b> hoặc <b>fullstory.tpl</b>.<br />
 </div>
-You can use HTML and JavaScript when you add a banner code.	
+Bạn có thể sử dụng HTML và JavaScript khi bạn thêm mã banner.
 HTML;
 
 
-$help_sections['title']['date'] ="Local time and date format";
+$help_sections['title']['date'] ="Định dạng ngày giờ địa phương";
 $help_sections['body']['date'] = <<<HTML
-The following symbols can be recognized in the format string: 
+Các ký hiệu sau có thể được sử dụng trong chuỗi định dạng: <a href="https://www.php.net/manual/en/function.date.php" target="_blank">Tham khảo thêm</a>
 <ul>
-<li><b>a</b> - "am" or "pm"</li>
-<li><b>A</b> - "AM" or "PM"</li>
-<li><b>B</b> - Swatch Internet time </li>
-<li><b>d</b> - day of the month, 2 digits with the leading zero if necessary; from "01" to "31"</li>
-<li><b>D</b> - day of the week, alphabetic, 3 letters; for example "Fri"</li>
-<li><b>F</b> - month, alphabetic, long; for example "January"</li>
-<li><b>g</b> - hour, 12-hour format without leading zeros; from "1" to "12"</li>
-<li><b>G</b> - hour, 24-hour format without leading zeros; from "1" to "23"</li>
-<li><b>h</b> - hour, 12-hour format; from "01" to "12" </li>
-<li><b>H</b> - hour, 24-hour format; from "00" to "23" </li>
-<li><b>i</b> - minutes; from "00" to "59"</li>
+<li><b>a</b> - "am" hoặc "pm"</li>
+<li><b>A</b> - "AM" hoặc "PM"</li>
+<li><b>B</b> - Swatch thời gian Internet: 000 đến 999</li>
+<li><b>d</b> - ngày trong tháng, 2 chữ số có số 0 đứng đầu nếu cần thiết; từ "01" đến "31"</li>
+<li><b>D</b> - ngày trong tuần, sử dụng bảng chữ cái abc, 3 ký tự; ví dụ "Fri"</li>
+<li><b>F</b> - tháng, sử dụng bảng chữ cái abc, long; ví dụ "January"</li>
+<li><b>g</b> - giờ, 12-giờ format without leading zeros; từ "1" đến "12"</li>
+<li><b>G</b> - giờ, 24-giờ format without leading zeros; từ "1" đến "23"</li>
+<li><b>h</b> - giờ, 12-giờ format; từ "01" đến "12" </li>
+<li><b>H</b> - giờ, 24-giờ format; từ "00" đến "23" </li>
+<li><b>i</b> - phút; từ "00" đến "59"</li>
 <li><b>I</b> (uppercase 'i') - "1", if Daylight Savings Time is used; otherwise - "0".</li>
-<li><b>j</b> - the day of the month without leading zeros; from "1" to "31" </li>
-<li><b>l</b> (lowercase 'L') - day of the week, alphabetic, long; for example "Friday" </li>
-<li><b>L</b> - boolean, indicating whether a leap year or not; "0" or "1"</li> 
-<li><b>m</b> - month; from "01" to "12"</li>
-<li><b>M</b> - month, alphabetic, 3 letters; for example "Jan" </li>
-<li><b>n</b> - month without leading zeros; from "1" to "12" </li>
-<li><b>O</b> - Difference from Greenwich Mean Time, in hours; for example, "+0200" </li>
-<li><b>r</b> - RFC 822 date format; for example "Thu, 21 Dec 2000 16:01:07 +0200" (introduced in PHP 4.0.4) </li>
-<li><b>s</b> - seconds; from "00" to "59"</li>
-<li><b>S</b> - English suffix for the day of the month, 2 characters; "st", "nd", "rd" or "th"</li>
-<li><b>t</b> - the number of days in a given month; from "28" to "31" </li>
-<li><b>T</b> - setting Time Zone on this computer; i.e. "EST" or "MDT" </li>
+<li><b>j</b> - the day of the month without leading zeros; từ "1" đến "31" </li>
+<li><b>l</b> (lowercase 'L') - day of the week, sử dụng bảng chữ cái abc, long; ví dụ "Friday" </li>
+<li><b>L</b> - boolean, indicating whether a leap year or not; "0" hoặc "1"</li> 
+<li><b>m</b> - tháng; từ "01" đến "12"</li>
+<li><b>M</b> - tháng, sử dụng bảng chữ cái abc, 3 ký tự; ví dụ "Jan" </li>
+<li><b>n</b> - month without leading zeros; từ "1" đến "12" </li>
+<li><b>O</b> - Difference from Greenwich Mean Time, in hours; ví dụ, "+0200" </li>
+<li><b>r</b> - RFC 822 date format; ví dụ "Thu, 21 Dec 2000 16:01:07 +0200" (introduced in PHP 4.0.4) </li>
+<li><b>s</b> - seconds; từ "00" đến "59"</li>
+<li><b>S</b> - English suffix for the day of the month, 2 characters; "st", "nd", "rd" hoặc "th"</li>
+<li><b>t</b> - the number of days in a given month; từ "28" đến "31" </li>
+<li><b>T</b> - setting Time Zone on this computer; i.e. "EST" hoặc "MDT" </li>
 <li><b>U</b> - seconds since Unix Epoch (since January 1, 1970 00:00:00 GMT) </li>
-<li><b>w</b> - day of the week, numeric, from "0" (Sunday) to "6" (Saturday) </li>
+<li><b>w</b> - day of the week, numeric, từ "0" (Sunday) đến "6" (Saturday) </li>
 <li><b>W</b> - ISO-8601 week number of year, weeks start with Monday
 (introduced in PHP 4.1.0) </li>
-<li><b>Y</b> - year, 4 digits; for example, "1999"</li>
-<li><b>y</b> - year, 2 figures; for example, "99" </li>
-<li><b>z</b> - day of the year; from "0" to "365"</li>
-<li><b>Z</b> - Time Zone offset, in seconds (from "-43200" to "43200"). </li>
+<li><b>Y</b> - năm, 4 chữ số; ví dụ, "1999"</li>
+<li><b>y</b> - năm, 2 chữ số; ví dụ, "99" </li>
+<li><b>z</b> - ngày trong năm; từ "0" đến "365"</li>
+<li><b>Z</b> - Time Zone offset, in seconds (từ "-43200" đến "43200"). </li>
 Time Zone offset is always negative for zones to the west from UTC, and is always positive to the east from UTC.</li></ul>
 HTML;
 
-$help_sections['title']['social'] ="Configure authorization";
+$help_sections['title']['social'] ="Thiết lập đăng nhập qua mạng xã hội";
 $help_sections['body']['social'] = <<<HTML
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Vkontakte</div>
-The first thing you need is to create a new application for <a href="http://vk.com/editapp?act=create" target="_blank">Vkontakte</a> network.<br><br>
-In the opened form you should enter the name of the application. Select "Веб-сайт", and enter your website’s address: http://yoursite.com/index.php?do=auth-social&provider=vk. Replace yoursite.com with your basic domain.
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Vkontakte</div>
+Trước tiên, bạn cần tạo một ứng dụng mới bằng cách nhấn vào <a href="http://vk.com/editapp?act=create" target="_blank">Vkontakte</a>.<br /><br />
+Trong biểu mẫu, bạn nhập tên ứng dụng. Chọn "Trang web", và nhập địa chỉ trang web của bạn: http://yoursite.com/index.php?do=auth-social&provider=vk. Thay thế yoursite.com bằng tên miền cơ bản của bạn.
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/vk1.jpg" /></div>
-<br />After you click "Подключить сайт", you must enter a verification code from the SMS that will come in the short term. If the code will be verified, the following form with the application settings should be shown:
+<br />Sau khi bạn nhấp vào "Kết nối trang web", bạn phải nhập mã xác minh từ tin nhắn SMS sẽ được gửi trong thời gian ngắn. Nếu mã được xác minh, biểu mẫu cài đặt ứng dụng sẽ được hiển thị:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/vk2.jpg" /></div>
-<br />You will need the data such as "ID приложения" and "Защищённый ключ" from this form, which you must enter in the Administration Panel of the script, in the Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that place the following code into <b>login.tpl</b>:
-<div class="code">[vk]&lt;a href="{vk_url}" target="_blank"&gt;Log in using Vkontakte&lt;/a&gt;[/vk]</div>
-Where tags [vk] … [/vk] display the text enclosed between them if the authorization using Vkontakte network is enabled. Tag {vk_url} displays the URL link to the authorization in the social network.
-<br><br>
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Odnoklassniki</div>
-You need to fill <a href="http://www.odnoklassniki.ru/devaccess" target="_blank">the form and get the developer account</a> to register the website where the authorization using Odnoklassniki network will be performed. After that, open <a href="http://www.odnoklassniki.ru/games" target="_blank">"Игры"</a> section and find a link on the right side of the menu<a href="http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev" target="_blank">"Мои загруженные"</a>. Click "добавить приложение" and fill in the form:<br><br>
+<br />Bạn sẽ cần dữ liệu như "Application id" và "Secure key" từ biểu mẫu này, bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[vk]&lt;a href="{vk_url}" target="_blank"&gt;Đăng nhập sử dụng Vkontakte&lt;/a&gt;[/vk]</div>
+Nơi mà thẻ [vk] … [/vk] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Vkontakte network được bật. Thẻ {vk_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Odnoklassniki</div>
+Bạn cần điền thông tin vào <a href="http://www.odnoklassniki.ru/devaccess" target="_blank">biểu mẫu và nhận tài khoản nhà phát triển</a> để đăng ký trang web ủy quyền đăng nhập sử dụng mạng Odnoklassniki. Sau đó, mở <a href="http://www.odnoklassniki.ru/games" target="_blank">"Games"</a> và tìm một liên kết ở phía bên phải của menu <a href="http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev" target="_blank">"Tôi đã tải lên"</a>. Nhấn "thêm ứng dụng" và điền vào biểu mẫu:<br /><br />
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/odnoklassniki1.jpg" /></div>
-<br />Specify “Веб” application type there, and check "External". In "Ссылка на приложение" and "Список разрешённых redirect_uri" specify: http://yoursite.com/index.php?do=auth-social&provider=od , and check "Разрешить клиентскую OAuth авторизацию". After adding a new application, you will receive an email with the needed settings.
+<br />Chỉ định loại ứng dụng "Web", và check vào "External". Trong "Liên kết ứng dụng" và "Danh sách được phép redirect_uri" nhập:
+ http://yoursite.com/index.php?do=auth-social&provider=od , và check vào "Allow client OAuth authentication". Sau khi thêm một ứng dụng mới, bạn sẽ nhận được một email với các cài đặt cần thiết.
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/odnoklassniki2.jpg" /></div>
-<br />You will need the following options: "Application ID", "Публичный ключ приложения", "Секретный ключ приложения", that you should enter to Administration Panel of the script in Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that place the following code into <b>login.tpl</b>:
-<div class="code">[odnoklassniki]&lt;a href="{odnoklassniki_url}" target="_blank"&gt;Log in using Odnoklassniki&lt;/a&gt;[/odnoklassniki]</div>
-Where tags [odnoklassniki] … [/odnoklassniki] display the text enclosed between them if the authorization using Odnoklassniki network is enabled. Tag {odnoklassniki_url} displays the URL link to the authorization in the social network.
-<br><br>
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Facebook</div>
-The first thing you need is to create a new application for <a href="https://developers.facebook.com/apps" target="_blank">Facebook</a> network.<br><br>
-Click "+ Создать новое приложение" in the upper right corner. Then enter the name of the application:
+<br />Bạn sẽ cần các tùy chọn sau: "Application ID", "Application Public Key", "Application secret key", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[odnoklassniki]&lt;a href="{odnoklassniki_url}" target="_blank"&gt;Đăng nhập sử dụng Odnoklassniki&lt;/a&gt;[/odnoklassniki]</div>
+Nơi mà thẻ [odnoklassniki] … [/odnoklassniki] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Odnoklassniki được bật. Thẻ {odnoklassniki_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Facebook</div>
+Trước tiên, bạn cần tạo một ứng dụng mới bằng cách nhấn vào <a href="https://developers.facebook.com/apps" target="_blank">Facebook</a>.<br /><br />
+Nhấn vào "+ Create a new application" ở góc trên bên phải. Sau đó nhập tên của ứng dụng:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc1.jpg" /></div>
-<br /> Next, on the settings page of your application click "Add Platform". Then choose "Website" and enter your website’s address: http://yoursite.com/
+<br /> Tiếp theo, trên trang cài đặt của ứng dụng của bạn bấm vào "Add Platform". Tiếp đó chọn "Website" và nhập địa chỉ trang web của bạn http://yoursite.com/
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc2.jpg" /></div>
-<br /> Then save all your settings. For further work you need the options that you can find in the following fields:
+<br />Sau đó lưu tất cả các cài đặt của bạn. Đối với công việc tiếp theo, bạn cần các tùy chọn mà bạn có thể tìm thấy trong các trường sau:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc3.jpg" /></div>
-<br />that you should enter to Administration Panel of the script in Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that place the following code into <b>login.tpl</b>:
-<div class="code">[facebook]&lt;a href="{facebook_url}" target="_blank"&gt;Log in using Facebook&lt;/a&gt;[/facebook]</div>
-Where tags [facebook] … [/facebook] display the text enclosed between them if the authorization using Facebook network is enabled. Tag {facebook_url} displays the URL link to the authorization in the social network.
-<br><br>
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Google</div>
-The first thing you need is to create a new application <a href="https://code.google.com/apis/console/" target="_blank">Google</a>. After navigating to the page click on "Create project".
+<br />bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[facebook]&lt;a href="{facebook_url}" target="_blank"&gt;Đăng nhập sử dụng Facebook&lt;/a&gt;[/facebook]</div>
+Nơi mà thẻ [facebook] … [/facebook] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Facebook được bật. Thẻ {facebook_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Google</div>
+Trước tiên, bạn cần là tạo một ứng dụng mới <a href="https://code.google.com/apis/console/" target="_blank">Google</a>. Sau khi chuyển đến trang, nhấp vào "Create project".
 <div style="text-align:center;"><img src="engine/skins/images/google1.jpg" /></div>
-After completing the form, go to the library and click on the Google+ API (note that the top should be the name of your created project)
+Sau khi điền vào biểu mẫu, đi đến thư viện và nhấp vào Google+ API (lưu ý rằng đầu trang phải là tên của dự án bạn đã tạo)
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/google2.jpg" /></div>
-<br />Include this API, and after activation You will be prompted to create credentials. Fill in the form. And save:
+<br />Bao gồm API này và sau khi kích hoạt, bạn sẽ được nhắc tạo thông tin đăng nhập. Điền vào biểu mẫu và lưu:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/google3.jpg" /></div>
-<br />Fill the form:
+<br />Điền vào biểu mẫu:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/google4.jpg" /></div>
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/google5.jpg" /></div>
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/google6.jpg" /></div>
-<br />You will need the following options: "Client ID" and "Client Secret" that you should enter to Administration Panel of the script in Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that place the following code into <b>login.tpl</b>:
-<div class="code">[google]&lt;a href="{google_url}" target="_blank"&gt;Log in using Google&lt;/a&gt;[/google]</div>
-Where tags [google] … [/google] display the text enclosed between them if the authorization using Google is enabled. Tag {google_url}  displays the URL link to the authorization in the network.
-<br><br>
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Mail.Ru</div>
-First you need to create a new application on <a href="https://o2.mail.ru/app/new/" target="_blank">https://o2.mail.ru/app/new/</a>.<br><br>
-Next, fill in the form below:
+<br />Bạn sẽ cần các tùy chọn sau: "Client ID" và "Client Secret" bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[google]&lt;a href="{google_url}" target="_blank"&gt;Đăng nhập sử dụng Google&lt;/a&gt;[/google]</div>
+Nơi mà thẻ [google] … [/google] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Google được bật. Thẻ {google_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Mail.Ru</div>
+Trước tiên, bạn cần tạo một ứng dụng mới trên <a href="https://o2.mail.ru/app/new/" target="_blank">https://o2.mail.ru/app/new/</a>.<br /><br />
+Tiếp theo, điền vào biểu mẫu dưới đây:
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/mailru1.jpg" /></div>
-<br />For redirect_uri use https://site.com/index.php?do=auth-social&provider=mailru where site.com your domain name.
+<br />Với tham số redirect_uri là https://site.com/index.php?do=auth-social&provider=mailru trong đó site.com là tên miền trang web của bạn.
 <br /><br /><div style="text-align:center;"><img src="engine/skins/images/mailru2.jpg" /></div>
-<br />You will need the following options: "ID" and "Secret Key", that you should enter to Administration Panel of the script in Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that place the following code into <b>login.tpl</b>:
-<div class="code">[mailru]&lt;a href="{mailru_url}" target="_blank"&gt;Log in using Mail.Ru&lt;/a&gt;[/mailru]</div>
-Where tags [mailru] … [/mailru] display the text enclosed between them if the authorization using Mail.Ru is enabled. Tag {mailru_url} displays the URL link to the authorization in the network.
-<br><br>
-<div class="bg-primary-700" style="padding:10px;">Configure authorization using Yandex</div>
-First you need to create a new application on <a href="https://oauth.yandex.ru/client/new" target="_blank">Yandex</a>.<br><br>
+<br />Bạn sẽ cần các tùy chọn sau: "ID" và "Secret Key", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[mailru]&lt;a href="{mailru_url}" target="_blank"&gt;Đăng nhập sử dụng Mail.Ru&lt;/a&gt;[/mailru]</div>
+Nơi mà thẻ [mailru] … [/mailru] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Mail.Ru được bật. Thẻ {mailru_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Yandex</div>
+Trước tiên, bạn cần tạo một ứng dụng mới trên <a href="https://oauth.yandex.ru/client/new" target="_blank">Yandex</a>.<br /><br />
 <div style="text-align:center;"><img src="engine/skins/images/yandex1.jpg" /></div>
-<br />The title will be "Yandex Auth". Choose "Яндекс.Логин" and select all items: e-mail address, date of birth, username of the full name. We will get the access to them if user entered all the data in the user profile.  Block with the special parameters will be shown on the next page:
+<br />Tiêu đề sẽ là "Yandex Auth". Chọn "Yandex.Login" và chọn tất cả các mục: địa chỉ e-mail, ngày sinh, tên người dùng của tên đầy đủ. Chúng tôi sẽ có quyền truy cập vào chúng nếu người dùng nhập tất cả dữ liệu trong hồ sơ người dùng. Khối với các tham số đặc biệt sẽ được hiển thị trên trang tiếp theo:
 <div style="text-align:center;"><img src="engine/skins/images/yandex2.jpg" /></div>
-<br />You will need the following options: "ID приложения" and "Пароль приложения", that you should enter to Administration Panel of the script in Social Network Settings. These fields will be unique for your site, they cannot be copied from the screenshot above.
-<br /><br />After that, place the following code into <b>login.tpl</b>:
-<div class="code">[yandex]&lt;a href="{yandex_url}" target="_blank"&gt;Log in using Yandex&lt;/a&gt;[/yandex]</div>
-Where tags [yandex] … [/yandex] display the text enclosed between them if the authorization using Yandex is enabled. Tag {yandex_url} displays the URL link to the authorization in the network.
+<br />Bạn sẽ cần các tùy chọn sau: "Application id" và "Application password", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[yandex]&lt;a href="{yandex_url}" target="_blank"&gt;Đăng nhập sử dụng Yandex&lt;/a&gt;[/yandex]</div>
+Nơi mà thẻ [yandex] … [/yandex] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Yandex được bật. Thẻ {yandex_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
 HTML;
 
 ?>
