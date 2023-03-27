@@ -1,0 +1,167 @@
+<?php
+
+$lang_logs = array (
+
+// 14.0
+'admin_logs_action_120'		=>	"Bật Danh mục, ID:",
+'admin_logs_action_121'		=>	"Tắt Danh mục, ID:",
+// 14.0
+
+// 13.3
+'admin_logs_action_119'		=>	"Thay đổi thứ tự sắp xếp các plugin",
+// 13.3
+
+// 13.1
+'admin_logs_action_118'		=>	"Chỉnh sửa chặn trong bộ lọc người dùng:",
+// 13.1
+
+// 13.0
+'admin_logs_action_116'		=>	"Thêm Plugin Mới:",
+'admin_logs_action_117'		=>	"Chỉnh sửa Plugin:",
+'admin_logs_action_115'		=>	"Xóa Plugin, ID:",
+'admin_logs_action_1140'	=>	"Tắt Plugin, ID:",
+'admin_logs_action_1141'	=>	"Bật Plugin, ID:",
+// 13.0
+
+// 12.1
+'admin_logs_action_109'	=>	"Xóa số lần xem banner quảng cáo, ID:",
+'admin_logs_action_110'	=>	"Xóa số lần nhấp vào banner quảng cáo, ID:",
+'admin_logs_action_111'	=>	"Thêm Chiến dịch quảng cáo:",
+'admin_logs_action_112'	=>	"Chỉnh sửa Chiến dịch quảng cáo:",
+'admin_logs_action_113'	=>	"Xóa bỏ Chiến dịch quảng cáo, ID:",
+// 12.1
+
+// 12.0
+'admin_logs_action_105'	=>	"Thêm thẻ meta cho URL:",
+'admin_logs_action_106'	=>	"Chỉnh sửa thẻ meta cho URL:",
+'admin_logs_action_107'	=>	"Xóa bỏ URL trong mô-đun thẻ Meta",
+'admin_logs_action_108'	=>	"Export of users",
+// 12.0
+
+// 11.3
+'admin_logs_action_102'	=> "Thêm chuyển hướng đến URL:",
+'admin_logs_action_103'	=> "Chỉnh sửa chuyển hướng đến URL:",
+'admin_logs_action_104'	=> "Xóa URLs trong mô-đun 'Redirects'",
+// 11.3
+
+// 11.2
+'admin_logs_action_99'	=>	"Invalid PIN",
+'admin_logs_action_100'	=>	"Xác thực được xác nhận bằng mã PIN",
+'admin_logs_action_101'	=>	"Xác thực (tên đăng nhập và mật khẩu).",
+// 11.2
+
+// 10.4
+'admin_logs_action_96'	=>	"Tự động xóa bài viết vào thời gian cuối được thiết lập trong cài đặt bài viết:",
+'admin_logs_action_97'	=>	"Xóa tất cả bình luận của thành viên:",
+'admin_logs_action_98'	=>	"Xóa tất cả bài viết của thành viên:",
+// 10.4
+
+// 10.1
+'admin_logs_action_93'	=>	"Thêm mới từ khóa tham chiếu chéo Cross-Reference:",
+'admin_logs_action_94'	=>	"Chỉnh sửa từ khóa tham chiếu chéo Cross-Reference:",
+'admin_logs_action_95'	=>	"Chỉnh sửa liên kết trong mô-đun tham chiếu chéo Cross-References",
+// 10.1
+
+// 10.0
+'admin_logs_action_89'	=>	"Đăng nhập thất bại vào Bảng Quản Trị. Tên đăng nhập hoặc mật khẩu không hợp lệ.",
+'admin_logs_action_90'	=>	"Đăng nhập thất bại vào Bảng Quản Trị. Cookies được lưu trên trình duyệt web không hợp lệ.",
+'admin_logs_action_91'	=>	"Không thể đăng nhập vào trang web. Sai mật khẩu.",
+'admin_logs_action_92'	=>	"Không thể đăng nhập vào trang web. Cookies được lưu trên trình duyệt web không hợp lệ.",
+// 10.0
+
+// 9.8
+'admin_logs_action_87'	=>	"Người dùng này được liệt kê là Spammer:",
+'admin_logs_action_88'	=>	"Khách chưa đăng ký này được liệt kê là Spammer:",
+// 9.8
+
+// 9.4
+'admin_logs_action_1'	=>	"Thêm bài viết:",
+'admin_logs_action_2'	=>	"Thêm khảo sát:",
+'admin_logs_action_3'	=>	"Chỉnh sửa Khảo sát:",
+'admin_logs_action_4'	=>	"Thêm Banner quảng cáo mới:",
+'admin_logs_action_5'	=>	"Chỉnh sửa Banner quảng cáo:",
+'admin_logs_action_6'	=>	"Vô hiệu hóa banner quảng cáo, ID:",
+'admin_logs_action_7'	=>	"Bật Banner quảng cáo, ID:",
+'admin_logs_action_8'	=>	"Xóa bỏ Banner quảng cáo, ID:",
+'admin_logs_action_9'	=>	"Thêm Bộ lọc chặn theo IP, tên đăng nhập hoặc email",
+'admin_logs_action_10'	=>	"Xóa bỏ một mục trong bộ lọc người dùng.",
+'admin_logs_action_11'	=>	"Thay đổi sắp xếp danh mục.",
+'admin_logs_action_12'	=>	"Thêm danh mục:",
+'admin_logs_action_13'	=>	"Xóa bỏ danh mục, ID:",
+'admin_logs_action_14'	=>	"Chỉnh sửa danh mục:",
+'admin_logs_action_15'	=>	"Xóa bài viết trong thuật sĩ tối ưu hóa trước đó:",
+'admin_logs_action_16'	=>	"Xóa bình luận trong thuật sĩ tối ưu hóa trước đó:",
+'admin_logs_action_17'	=>	"Xóa tin nhắn cá nhân trong thuật sĩ tối ưu hóa.",
+'admin_logs_action_18'	=>	"Xóa nhật ký trong thuật sĩ tối ưu hóa.",
+'admin_logs_action_19'	=>	"Kiểm duyệt bình luận",
+'admin_logs_action_20'	=>	"Xóa tất cả bình luận trong bài viết, ID:",
+'admin_logs_action_21'	=>	"Xóa bình luật trong trang web.",
+'admin_logs_action_22'	=>	"Xóa khiếu nại.",
+'admin_logs_action_23'	=>	"Tối ưu hóa / Sửa chữa cơ sở dữ liệu.",
+'admin_logs_action_24'	=>	"SAo lưu cơ sở dữ liệu.",
+'admin_logs_action_25'	=>	"Chỉnh sửa bài viết:",
+'admin_logs_action_26'	=>	"Xóa bài viết:",
+'admin_logs_action_27'	=>	"Xóa Khảo sát, ID:",
+'admin_logs_action_28'	=>	"Xóa kết quả khảo sát, ID:",
+'admin_logs_action_29'	=>	"Tạm dừng cuộc khảo sát, ID:",
+'admin_logs_action_30'	=>	"Bật Khảo sát, ID:",
+'admin_logs_action_31'	=>	"Chỉnh sửa Mẫu Email.",
+'admin_logs_action_32'	=>	"Xóa Hình ảnh đã tải lên của bài viết, ID:",
+'admin_logs_action_33'	=>	"Xóa hình ảnh và tập tin đã tải lên của trang tĩnh, ID:",
+'admin_logs_action_34'	=>	"Xóa tập tin đã tải lên của bài viết, ID:",
+'admin_logs_action_36'	=>	"Tải lên tập tin:",
+'admin_logs_action_37'	=>	"Xóa tập tin:",
+'admin_logs_action_38'	=>	"Tạo Site Map.",
+'admin_logs_action_39'	=>	"Sử dụng chỉnh sửa hàng loạt các trang tĩnh.",
+'admin_logs_action_40'	=>	"Sử dụng Xóa hàng loạt các trang tĩnh.",
+'admin_logs_action_41'	=>	"Xóa thành viên:",
+'admin_logs_action_42'	=>	"Xóa bình luận của thành viên có ID:",
+'admin_logs_action_43'	=>	"Thay đổi nhóm của thành viên:",
+'admin_logs_action_44'	=>	"Ban thành viên:",
+'admin_logs_action_45'	=>	"Xóa Tin nhắn cá nhân của người dùng:",
+'admin_logs_action_46'	=>	"Sử dụng Chỉnh sửa hàng loạt bài viết.",
+'admin_logs_action_47'	=>	"Gửi thư hàng loạt",
+'admin_logs_action_48'	=>	"Thay đổi cài đặt hệ thống",
+'admin_logs_action_49'	=>	"Cập nhật lại bài viết",
+'admin_logs_action_50'	=>	"Xóa Kênh RSS, ID:",
+'admin_logs_action_51'	=>	"Thêm Kênh RSS:",
+'admin_logs_action_52'	=>	"Chỉnh sửa Kênh RSS:",
+'admin_logs_action_53'	=>	"Thêm Nguồn cung cấp tin RSS:",
+'admin_logs_action_54'	=>	"Chỉnh sửa Nguồn cung cấp tin RSS:",
+'admin_logs_action_55'	=>	"Tắt Nguồn cung cấp tin RSS, ID:",
+'admin_logs_action_56'	=>	"Bật Nguồn cung cấp tin RSS, ID:",
+'admin_logs_action_57'	=>	"Xóa Nguồn cung cấp tin RSS, ID:",
+'admin_logs_action_58'	=>	"Tìm và Thay thế trong cơ sở dữ liệu:",
+'admin_logs_action_59'	=>	"Thêm Trang Tĩnh:",
+'admin_logs_action_60'	=>	"Chỉnh sửa Trang Tĩnh:",
+'admin_logs_action_61'	=>	"Xóa thẻ từ Tag Cloud:",
+'admin_logs_action_62'	=>	"Chỉnh sửa thẻ từ Tag Cloud:",
+'admin_logs_action_63'	=>	"Thêm thành viên mới:",
+'admin_logs_action_64'	=>	"Chỉnh sửa thành viên:",
+'admin_logs_action_65'	=>	"Xóa thành viên:",
+'admin_logs_action_66'	=>	"Thay đổi gói ngôn ngữ cho giao diện:",
+'admin_logs_action_67'	=>	"Giao diện mới:",
+'admin_logs_action_68'	=>	"Xóa Giao diện:",
+'admin_logs_action_69'	=>	"Tập tin giao diện mới:",
+'admin_logs_action_70'	=>	"Chỉnh sửa tập tin giao diện:",
+'admin_logs_action_71'	=>	"Xóa các field bổ sung trong hồ sơ người dùng:",
+'admin_logs_action_72'	=>	"Thêm/Sửa các field bổ sung trong hồ sơ người dùng:",
+'admin_logs_action_73'	=>	"Xóa các field bổ sung trong bài viết:",
+'admin_logs_action_74'	=>	"Thêm/Sửa các field bổ sung trong bài viết:",
+'admin_logs_action_75'	=>	"Xóa Nhóm thành viên, ID:",
+'admin_logs_action_76'	=>	"Thêm Nhóm thành viên mới:",
+'admin_logs_action_77'	=>	"Chỉnh sửa Nhóm thành viên:",
+'admin_logs_action_78'	=>	"Chỉnh sửa Cài đặt trình phát video.",
+'admin_logs_action_79'	=>	"Thêm từ mới vào bộ lọc từ:",
+'admin_logs_action_80'	=>	"Loại bỏ các từ khỏi bộ lọc.",
+'admin_logs_action_81'	=>	"Chỉnh sửa trong bộ lọc từ, từ:",
+'admin_logs_action_82'	=>	"Đăng nhập vào Bảng Quản Trị (Tên đăng nhập và mật khẩu).",
+'admin_logs_action_83'	=>	"Chỉnh sửa một câu hỏi trong phần Câu hỏi-Trả lời:",
+'admin_logs_action_84'	=>	"Thêm Câu hỏi vào phần Câu hỏi-Trả lời:",
+'admin_logs_action_85'	=>	"Xóa câu hỏi trong phần Câu hỏi-Trả lời, ID:",
+'admin_logs_action_86'	=>	"Đăng nhập vào Bảng Quản Trị (sử dụng Cookies). Chuyển tiếp từ trang:",
+// 9.4
+
+);
+
+?>

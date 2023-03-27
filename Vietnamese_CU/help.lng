@@ -1,0 +1,187 @@
+<?php
+
+$help_sections['title']['templates'] ="Giao diện";
+$help_sections['body']['templates'] = <<<HTML
+Giao diện được sử dụng để thay đổi hiển thị của bài viết. Bạn có thể thay đổi các phần khác nhau của giao diện được sử dụng để hiển thị các phần khác nhau của bài viết. Ví dụ: "Bài viết ngắn" được sử dụng để thay đổi giao diện của bài viết đang hoạt động, "Bài viết đầy đủ" được sử dụng để thay đổi giao diện của toàn bộ bài viết, "Bình luận" được sử dụng để thay đổi giao diện của bình luận, v.v.<br /><br />
+Bạn có thể sử dụng HTML để thay đổi các cấu trúc khác nhau khi bạn chỉnh sửa một phần của giao diện. Bạn cần thêm một số ký hiệu đặc biệt trong các giao diện để xác định vị trí cho tiêu đề bài viết, tên tác giả, ngày, v.v. Mỗi phần của giao diện tương ứng với một chỉ định cụ thể.<br />
+Giá trị của các biến có thể được xem trên trang chỉnh sửa giao diện. Nhấn vào tên của phần giao diện để truy cập trang này. Ví dụ: <b>{title}</b> là tiêu đề của bài viết, <b>{author}</b> là bài viết của tác giả, v.v.<br /><br />
+Bạn có thể sử dụng một số giao diện khác nhau.
+HTML;
+
+$help_sections['title']['xfields'] ="Field bổ sung";
+$help_sections['body']['xfields'] = <<<HTML
+Các field bổ sung có thể được thiết lập thông qua <b>Cấu hình hệ thống</b> &gt; <b>Quản lý các field bổ sung cho các bài viết</b>. Chức năng này rất hữu ích khi đăng bài viết, ví dụ: thêm liên kết đến nguồn lấy thông tin.<br />
+Thêm một field mới bằng cách nhấp vào "Thêm field". Trên trang tiếp theo, bạn phải nhập một tên duy nhất cho field, mô tả field và nội dung của field theo mặc định. Bạn cũng cần chọn xem bạn có muốn sử dụng field tùy chọn không (Người đăng bài có thể để trống field này). Nếu bạn cho phép người dùng để trống khi thêm/chỉnh sửa bài viết, mô-đun sẽ không bật.<br /><br />
+Nếu bạn muốn sử dụng field này trên bài viết, bạn cần thêm biến <b>[xfvalue_X]</b> vào giao diện, với <b>X</b> - là giá trị của field (Tên mà bạn đã nhập khi bạn thêm một field mới). Bạn cũng có thể dùng <b>[xfgiven_X]...[/xfgiven_X]</b> sẽ hiển thị văn bản giữa chúng nếu field bổ sung có dữ liệu nhập vào. Ngoài ra bạn có thể sử dụng <b>[xfnotgiven_X]...[/xfnotgiven_X]</b> sẽ hiển thị văn bản giữa chúng nếu field bổ sung chưa dữ liệu nhập vào.<br /><br />
+Ví dụ:
+<div class="code">
+<b>1)</b>- Tên field: stit<br />
+&nbsp;&nbsp;- Mô tả field: Nguồn thông tin<br />
+&nbsp;&nbsp;- Giá trị mặc định: DLEVIET<br />
+&nbsp;&nbsp;- Người đăng bài có thể để trống field này: yes<br />
+<b>2)</b>- Tên field: source<br />
+&nbsp;&nbsp;- Mô tả field: Liên kết đến Nguồn thông tin<br />
+&nbsp;&nbsp;- Giá trị mặc định: https://dleviet.com<br />
+&nbsp;&nbsp;- Người đăng bài có thể để trống field này: yes<br /><br />
+[xfgiven_source]Nguồn lấy thông tin bài viết - &lt;a href=[xfvalue_source] target=_blank&gt;[xfvalue_stit]&lt;/a&gt;.[/xfgiven_source]<br />
+[xfnotgiven_source]Nguồn thông tin tự tác giả viết[/xfnotgiven_source]</div>
+Nếu field này được nhập thông tin trong quá trình đăng bài viết, thì mã HTML sau sẽ được hiển thị dưới dạng:
+<div class="code">Nguồn lấy thông tin bài viết - &lt;a href=https://dleviet.com target=_blank&gt;DLEVIET&lt;/a&gt;.</div>
+Nếu field này không được nhập thông tin trong quá trình đăng bài viết, bạn sẽ thấy:
+<div class="code">Nguồn thông tin tự tác giả viết</div>
+Hãy nhớ rằng chỉ các ký tự Latin và số được phép sử dụng cho tên field.
+HTML;
+
+$help_sections['title']['xprofile'] ="Các field bổ sung trong hồ sơ người dùng";
+$help_sections['body']['xprofile'] = <<<HTML
+Chức năng này được sử dụng để thêm các field mới vào hồ sơ người dùng, ngoài các thông tin chính đã có.<br /><br />
+Thêm một field mới bằng cách nhấp vào "Thêm field". Trên trang tiếp theo, bạn phải nhập tên duy nhất cho field và mô tả field. Bạn cũng cần chọn xem bạn có muốn cho phép người dùng thêm thông tin bổ sung trong quá trình đăng ký hay không, liệu field đó là cá nhân riêng tư không, cũng như người dùng có thể chỉnh sửa nội dung của field này hay không.<br /><br />
+Các field bổ sung có sẵn khi xem bình luận và hồ sơ người dùng. Bạn cần phải thêm [xfvalue_X] vào giao diện, với X – là giá trị của field (Tên mà bạn đã nhập khi bạn thêm một field mới). Ngoài ra bạn có thể sử dụng [xfgiven_X]...[/xfgiven_X].<br /><br />
+Ví dụ:
+<div class="code">
+&nbsp;&nbsp;- Tên field: city<br />
+&nbsp;&nbsp;- Mô tả field: City<br />
+&nbsp;&nbsp;- Loại field: One String<br />
+&nbsp;&nbsp;- Thêm vào trang đăng ký?: yes<br />
+&nbsp;&nbsp;- Người dùng có thể chỉnh sửa field này không?: yes<br />
+&nbsp;&nbsp;- Đặt field này thành riêng tư?: no<br /><br />
+trong comments.tpl và userinfo.tpl, bạn cần thêm<br />
+[xfgiven_city] Thành phố: [xfvalue_city] [/xfgiven_city]</div>
+Nếu người dùng thêm bất kỳ thành phố nào trong hồ sơ người dùng, ví dụ "Moscow", kết quả mã HTML sau sẽ xuất hiện: 
+<div class="code">Thành phố: Moscow</div>
+Hãy nhớ rằng chỉ các ký tự Latin và số được phép sử dụng cho tên field.
+HTML;
+
+$help_sections['title']['banners'] ="Quản lý Quảng cáo";
+$help_sections['body']['banners'] = <<<HTML
+Mô-đun này được thiết kế để đặt và quản lý quảng cáo trên trang web nhanh chóng và dễ dàng. Bạn chỉ cần thêm thẻ của banner vào giao diện để đặt banner của bạn trên trang web. Sau đó, bạn sẽ có thể thay đổi hoặc chỉnh sửa mã banner trong Bảng quản trị mà không cần chỉnh sửa trong giao diện.<br /><br />
+Sau khi bạn thêm banner của mình, bạn có thể đặt thẻ đó vào tập tin giao diện <b>main.tpl</b> hoặc <b>fullstory.tpl</b>. Nếu bạn muốn thêm banner giữa các bài viết ngắn, thì bạn không cần phải thêm thẻ này. Nó sẽ được đặt ở đó tự động.
+<br />Ví dụ:
+<div class="code">
+&nbsp;&nbsp;- Tên của banner: header<br />
+&nbsp;&nbsp;- Mô tả của banner: Top Banner<br />
+&nbsp;&nbsp;- Cho phép hiển thị banner: Yes<br />
+&nbsp;&nbsp;- Chỉ hiển thị trên Trang chủ: No<br />
+&nbsp;&nbsp;- Cố định vị trí: No<br />
+&nbsp;&nbsp;- Hiển thị xen kẽ giữa các bài viết ngắn: Không<br /><br />
+Bạn có thể thêm thẻ banner <b>{banner_header}</b> vào tập tin <b>main.tpl</b> hoặc <b>fullstory.tpl</b>.<br />
+</div>
+Bạn có thể sử dụng HTML và JavaScript khi bạn thêm mã banner.
+HTML;
+
+
+$help_sections['title']['date'] ="Định dạng ngày giờ địa phương";
+$help_sections['body']['date'] = <<<HTML
+Các ký hiệu sau có thể được sử dụng trong chuỗi định dạng: <a href="https://www.php.net/manual/en/function.date.php" target="_blank">Tham khảo thêm</a>
+<ul>
+<li><b>a</b> - "am" hoặc "pm"</li>
+<li><b>A</b> - "AM" hoặc "PM"</li>
+<li><b>B</b> - Swatch thời gian Internet: 000 đến 999</li>
+<li><b>d</b> - ngày trong tháng, 2 chữ số có số 0 đứng đầu nếu cần thiết; từ "01" đến "31"</li>
+<li><b>D</b> - ngày trong tuần, sử dụng bảng chữ cái abc, 3 ký tự; ví dụ "Fri"</li>
+<li><b>F</b> - tháng, sử dụng bảng chữ cái abc, long; ví dụ "January"</li>
+<li><b>g</b> - giờ, 12-giờ format without leading zeros; từ "1" đến "12"</li>
+<li><b>G</b> - giờ, 24-giờ format without leading zeros; từ "1" đến "23"</li>
+<li><b>h</b> - giờ, 12-giờ format; từ "01" đến "12" </li>
+<li><b>H</b> - giờ, 24-giờ format; từ "00" đến "23" </li>
+<li><b>i</b> - phút; từ "00" đến "59"</li>
+<li><b>I</b> (uppercase 'i') - "1", if Daylight Savings Time is used; otherwise - "0".</li>
+<li><b>j</b> - the day of the month without leading zeros; từ "1" đến "31" </li>
+<li><b>l</b> (lowercase 'L') - day of the week, sử dụng bảng chữ cái abc, long; ví dụ "Friday" </li>
+<li><b>L</b> - boolean, indicating whether a leap year or not; "0" hoặc "1"</li> 
+<li><b>m</b> - tháng; từ "01" đến "12"</li>
+<li><b>M</b> - tháng, sử dụng bảng chữ cái abc, 3 ký tự; ví dụ "Jan" </li>
+<li><b>n</b> - month without leading zeros; từ "1" đến "12" </li>
+<li><b>O</b> - Difference from Greenwich Mean Time, in hours; ví dụ, "+0200" </li>
+<li><b>r</b> - RFC 822 date format; ví dụ "Thu, 21 Dec 2000 16:01:07 +0200" (introduced in PHP 4.0.4) </li>
+<li><b>s</b> - seconds; từ "00" đến "59"</li>
+<li><b>S</b> - English suffix for the day of the month, 2 characters; "st", "nd", "rd" hoặc "th"</li>
+<li><b>t</b> - the number of days in a given month; từ "28" đến "31" </li>
+<li><b>T</b> - setting Time Zone on this computer; i.e. "EST" hoặc "MDT" </li>
+<li><b>U</b> - seconds since Unix Epoch (since January 1, 1970 00:00:00 GMT) </li>
+<li><b>w</b> - day of the week, numeric, từ "0" (Sunday) đến "6" (Saturday) </li>
+<li><b>W</b> - ISO-8601 week number of year, weeks start with Monday
+(introduced in PHP 4.1.0) </li>
+<li><b>Y</b> - năm, 4 chữ số; ví dụ, "1999"</li>
+<li><b>y</b> - năm, 2 chữ số; ví dụ, "99" </li>
+<li><b>z</b> - ngày trong năm; từ "0" đến "365"</li>
+<li><b>Z</b> - Time Zone offset, in seconds (từ "-43200" đến "43200"). </li>
+Time Zone offset is always negative for zones to the west from UTC, and is always positive to the east from UTC.</li></ul>
+HTML;
+
+$help_sections['title']['social'] ="Thiết lập đăng nhập qua mạng xã hội";
+$help_sections['body']['social'] = <<<HTML
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Vkontakte</div>
+Trước tiên, bạn cần tạo một ứng dụng mới bằng cách nhấn vào <a href="http://vk.com/editapp?act=create" target="_blank">Vkontakte</a>.<br /><br />
+Trong biểu mẫu, bạn nhập tên ứng dụng. Chọn "Trang web", và nhập địa chỉ trang web của bạn: http://yoursite.com/index.php?do=auth-social&provider=vk. Thay thế yoursite.com bằng tên miền cơ bản của bạn.
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/vk1.jpg" /></div>
+<br />Sau khi bạn nhấp vào "Kết nối trang web", bạn phải nhập mã xác minh từ tin nhắn SMS sẽ được gửi trong thời gian ngắn. Nếu mã được xác minh, biểu mẫu cài đặt ứng dụng sẽ được hiển thị:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/vk2.jpg" /></div>
+<br />Bạn sẽ cần dữ liệu như "Application id" và "Secure key" từ biểu mẫu này, bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[vk]&lt;a href="{vk_url}" target="_blank"&gt;Đăng nhập sử dụng Vkontakte&lt;/a&gt;[/vk]</div>
+Nơi mà thẻ [vk] … [/vk] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Vkontakte network được bật. Thẻ {vk_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Odnoklassniki</div>
+Bạn cần điền thông tin vào <a href="http://www.odnoklassniki.ru/devaccess" target="_blank">biểu mẫu và nhận tài khoản nhà phát triển</a> để đăng ký trang web ủy quyền đăng nhập sử dụng mạng Odnoklassniki. Sau đó, mở <a href="http://www.odnoklassniki.ru/games" target="_blank">"Games"</a> và tìm một liên kết ở phía bên phải của menu <a href="http://www.odnoklassniki.ru/dk?st.cmd=appsInfoMyDevList&st._aid=Apps_Info_MyDev" target="_blank">"Tôi đã tải lên"</a>. Nhấn "thêm ứng dụng" và điền vào biểu mẫu:<br /><br />
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/odnoklassniki1.jpg" /></div>
+<br />Chỉ định loại ứng dụng "Web", và check vào "External". Trong "Liên kết ứng dụng" và "Danh sách được phép redirect_uri" nhập:
+ http://yoursite.com/index.php?do=auth-social&provider=od , và check vào "Allow client OAuth authentication". Sau khi thêm một ứng dụng mới, bạn sẽ nhận được một email với các cài đặt cần thiết.
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/odnoklassniki2.jpg" /></div>
+<br />Bạn sẽ cần các tùy chọn sau: "Application ID", "Application Public Key", "Application secret key", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[odnoklassniki]&lt;a href="{odnoklassniki_url}" target="_blank"&gt;Đăng nhập sử dụng Odnoklassniki&lt;/a&gt;[/odnoklassniki]</div>
+Nơi mà thẻ [odnoklassniki] … [/odnoklassniki] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Odnoklassniki được bật. Thẻ {odnoklassniki_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Facebook</div>
+Trước tiên, bạn cần tạo một ứng dụng mới bằng cách nhấn vào <a href="https://developers.facebook.com/apps" target="_blank">Facebook</a>.<br /><br />
+Nhấn vào "+ Create a new application" ở góc trên bên phải. Sau đó nhập tên của ứng dụng:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc1.jpg" /></div>
+<br /> Tiếp theo, trên trang cài đặt của ứng dụng của bạn bấm vào "Add Platform". Tiếp đó chọn "Website" và nhập địa chỉ trang web của bạn http://yoursite.com/
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc2.jpg" /></div>
+<br />Sau đó lưu tất cả các cài đặt của bạn. Đối với công việc tiếp theo, bạn cần các tùy chọn mà bạn có thể tìm thấy trong các trường sau:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/fc3.jpg" /></div>
+<br />bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[facebook]&lt;a href="{facebook_url}" target="_blank"&gt;Đăng nhập sử dụng Facebook&lt;/a&gt;[/facebook]</div>
+Nơi mà thẻ [facebook] … [/facebook] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Facebook được bật. Thẻ {facebook_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Google</div>
+Trước tiên, bạn cần là tạo một ứng dụng mới <a href="https://code.google.com/apis/console/" target="_blank">Google</a>. Sau khi chuyển đến trang, nhấp vào "Create project".
+<div style="text-align:center;"><img src="engine/skins/images/google1.jpg" /></div>
+Sau khi điền vào biểu mẫu, đi đến thư viện và nhấp vào Google+ API (lưu ý rằng đầu trang phải là tên của dự án bạn đã tạo)
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/google2.jpg" /></div>
+<br />Bao gồm API này và sau khi kích hoạt, bạn sẽ được nhắc tạo thông tin đăng nhập. Điền vào biểu mẫu và lưu:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/google3.jpg" /></div>
+<br />Điền vào biểu mẫu:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/google4.jpg" /></div>
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/google5.jpg" /></div>
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/google6.jpg" /></div>
+<br />Bạn sẽ cần các tùy chọn sau: "Client ID" và "Client Secret" bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[google]&lt;a href="{google_url}" target="_blank"&gt;Đăng nhập sử dụng Google&lt;/a&gt;[/google]</div>
+Nơi mà thẻ [google] … [/google] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Google được bật. Thẻ {google_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Mail.Ru</div>
+Trước tiên, bạn cần tạo một ứng dụng mới trên <a href="https://o2.mail.ru/app/new/" target="_blank">https://o2.mail.ru/app/new/</a>.<br /><br />
+Tiếp theo, điền vào biểu mẫu dưới đây:
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/mailru1.jpg" /></div>
+<br />Với tham số redirect_uri là https://site.com/index.php?do=auth-social&provider=mailru trong đó site.com là tên miền trang web của bạn.
+<br /><br /><div style="text-align:center;"><img src="engine/skins/images/mailru2.jpg" /></div>
+<br />Bạn sẽ cần các tùy chọn sau: "ID" và "Secret Key", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[mailru]&lt;a href="{mailru_url}" target="_blank"&gt;Đăng nhập sử dụng Mail.Ru&lt;/a&gt;[/mailru]</div>
+Nơi mà thẻ [mailru] … [/mailru] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Mail.Ru được bật. Thẻ {mailru_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+<br /><br />
+<div class="bg-primary-700" style="padding:10px;">Thiết lập đăng nhập sử dụng mạng Yandex</div>
+Trước tiên, bạn cần tạo một ứng dụng mới trên <a href="https://oauth.yandex.ru/client/new" target="_blank">Yandex</a>.<br /><br />
+<div style="text-align:center;"><img src="engine/skins/images/yandex1.jpg" /></div>
+<br />Tiêu đề sẽ là "Yandex Auth". Chọn "Yandex.Login" và chọn tất cả các mục: địa chỉ e-mail, ngày sinh, tên người dùng của tên đầy đủ. Chúng tôi sẽ có quyền truy cập vào chúng nếu người dùng nhập tất cả dữ liệu trong hồ sơ người dùng. Khối với các tham số đặc biệt sẽ được hiển thị trên trang tiếp theo:
+<div style="text-align:center;"><img src="engine/skins/images/yandex2.jpg" /></div>
+<br />Bạn sẽ cần các tùy chọn sau: "Application id" và "Application password", bạn phải nhập vào Bảng quản trị, trong Cài đặt mạng xã hội. Các trường này sẽ là duy nhất cho trang web của bạn, chúng không thể được sao chép từ ảnh chụp màn hình ở trên.
+<br /><br />Sau đó đặt đoạn mã sau vào <b>login.tpl</b>:
+<div class="code">[yandex]&lt;a href="{yandex_url}" target="_blank"&gt;Đăng nhập sử dụng Yandex&lt;/a&gt;[/yandex]</div>
+Nơi mà thẻ [yandex] … [/yandex] hiển thị văn bản ở giữa cặp thẻ này nếu đăng nhập sử dụng mạng Yandex được bật. Thẻ {yandex_url} hiển thị liên kết tới trang đăng nhập của mạng xã hội.
+HTML;
+
+?>
