@@ -5,6 +5,75 @@ $lang = array (
 'charset'			=>	"utf-8",
 'wysiwyg_language'	=>  "vi",
 
+// 16.0
+'error_max_queue'       => "Vượt quá số lượng tập tin tối đa được phép tải lên",
+'add_err_12'            => "Bạn không có quyền chỉnh sửa bài viết này",
+'title_editnews'        => "Chỉnh sửa bài viết",
+'hours_diffs'           => "giờ",
+'minutes_diffs'         => "phút",
+'time_diffs'            => "trước",
+'now_diffs'             => "Bây giờ",
+'diffs_format'          => "{date} lúc {time}",
+'user_says'             => "đề cập:",
+'thumb_imageerror'      => "Không thể tải hình ảnh",
+'thumb_fullscreen'      => "Chế độ toàn màn hình",
+'thumb_thtoggle'        => "Bật/tắt hình thu nhỏ thumbnails",
+'thumb_thzoom'          => "Tăng/giảm",
+'thumb_thdownload'      => "Tải hình ảnh",
+// 16.0
+
+
+// 15.3
+'media_upload_st_5'		=>	"Kéo và thả hình ảnh vào đây",
+'subscribe_info_4'		=>	"Bạn muốn hủy đăng ký nhận thông báo khi có bình luận mới trong bài viết này?",
+'subscribe_info_5'		=>	"Bạn đã hủy đăng ký nhận thông báo khi có bình luận mới trong bài viết này",
+// 15.3
+
+// 15.2
+'news_info_9'			=>	"Đã tắt tính năng bình luận của bài viết này",
+// 15.2
+
+// 15.1
+'error_complaint_3'		=>	"Số lượng ký tự tối đa của khiếu nại không được vượt quá 2000 ký tự.",
+'fav_plus_err_1'		=>  "Bài viết đã được thêm vào Mục yêu thích của bạn.",
+'fav_plus_err_2'		=>  "Bài đăng vẫn đang chờ kiểm duyệt và không thể Mục yêu thích của bạn.",
+'duplicate_protect'		=>	"Dữ liệu đã được gửi thành công.",
+// 15.1
+
+// 15.0
+'file_not_image'		=>	"Chỉ cho phép tải lên tập tin JPG, PNG, GIF, BMP hoặc WebP.",
+// 15.0
+
+// 14.3
+'req_field_1'			=>	"Vui lòng nhập tên",
+'req_field_2'			=>	"Vui lòng nhập thông điệp",
+'req_field_3'			=>	"Vui lòng nhập tiêu đề thông điệp",
+'share_i_1'				=>	"Chia sẻ văn bản đã chọn",
+'share_i_2'				=>	"Twitter",
+'share_i_3'				=>	"Facebook",
+'share_i_4'				=>	"VK",
+'share_i_5'				=>	"Link trực tiếp:",
+'share_i_6'				=>	"Nhấn chuột phải và chọn «Copy Link»",
+// 14.3
+
+// 14.2
+'pm_err_12'				=>	"Đăng nhập tài khoản để đọc tin nhắn",
+'pm_err_13'				=>	"Chỉ người dùng đã đăng ký mới có thể sử dụng tin nhắn riêng. Đăng nhập vào tài khoản của bạn hoặc đăng ký, nếu bạn chưa đăng ký.",
+// 14.2
+
+// 14.1
+'pm_err_11' 			=>   "Không thể gửi tin nhắn vì người nhận không được phép sử dụng tin nhắn riêng trên trang web.",
+'reg_err_45'         	=>   "Tài khoản trên mạng xã hội này hiện đang được liên kết với tài khoản <b>{login}</b>. Đăng nhập bằng tài khoản này, hủy liên kết nó trong hồ sơ và sau đó bạn có thể liên kết lại nó trong hồ sơ của tài khoản mới.",
+'reg_err_46'        	=>   "Bạn chưa đăng nhập nên không thể liên kết tài khoản",
+'reg_err_47'         	=>   "Tài khoản của bạn không được liên kết với mạng xã hội. Vui lòng liên hệ quản trị viên để giải quyết vấn đề này.",
+'social_attach_ok' 		=>   "Tài khoản của bạn đã được liên kết thành công với tài khoản mạng xã hội {social}. Bạn có thể sử dụng nó để đăng nhập.",
+'social_attach_ok_1' 	=> 	 "Tài khoản của bạn đã được liên kết với mạng xã hội {social}. Thời gian tới, bạn có thể đăng nhập bằng tài khoản mạng xã hội của bạn.",
+'del_from_social' 		=>   "Bạn có chắc chắn muốn hủy bỏ liên kết tài khoản mạng xã hội này?",
+'del_from_social_1' 	=>   "Hủy liên kết mạng xã hội này khỏi tài khoản của bạn trên trang web.",
+'addnews_xf_alert_1' 	=>   "Bắt buộc nhập <b>{field}</b>",
+// 14.1
+
+
 // 14.0
 'January'				=>	"Tháng 1",
 'February'				=>	"Tháng 2",
@@ -46,7 +115,7 @@ $lang = array (
 
 // 13.3
 'complaint_title'		=>	"Gửi khiếu nại",
-'add_err_11'			=>	"Bài viết với SEO URL thân thiện với người dùng này đã tồn tại trên trang web. Thay đổi SEO URL thân thiện với người của bài viết thành một tên khác.",
+'add_err_11'			=>	"Bài viết với SEO URL này đã tồn tại trên trang web. Thay đổi SEO URL của bài viết thành một tên khác.",
 'upload_error_7'		=>	"Hình ảnh tải lên không thể nhỏ hơn {minsize} pixel.",
 // 13.3
 
@@ -73,24 +142,24 @@ $lang = array (
 
 // 12.0
 'enter_n_pass'			=>	"Yêu cầu xác nhận mật khẩu",
-'enter_n_pass_1'		=>	"Để xem bài viết này, bạn phải nhập mật khẩu",
+'enter_n_pass_1'		=>	"Để xem bài viết này, bạn phải nhập mật khẩu của bài viết",
 'enter_n_pass_2'		=>	"Mật khẩu:",
 'enter_n_pass_3'		=>	"Gửi",
-'enter_n_pass_4'		=>	"<b>Mật khẩu không hợp lệ</b>",
+'enter_n_pass_4'		=>	"<b>Mật khẩu bài viết không hợp lệ</b>",
 // 12.0
 
 // 11.3
-'sess_error'			=> "Phiên người dùng của bạn đã hết hạn, tải lại trang web và đăng nhập lại nếu cần thiết.",
+'sess_error'			=> "Phiên làm việc của bạn đã hết hạn, tải lại trang web và đăng nhập lại nếu cần thiết.",
 'feed_error_1'			=> "Không tìm thấy giao diện <b>{name}</b> mà bạn yêu cầu.",
 // 11.3
 
 // 11.2
 'twofactor_auth'		=>	"Bật xác thực hai yếu tố (mã PIN sử dụng một lần sẽ được gửi đến địa chỉ email)",
 'twofactor_alert'		=>	"Bạn đã bật xác thực hai yếu tố cho tài khoản của mình. Mã PIN sử dụng một lần đã được gửi đến địa chỉ e-mail của bạn. Bạn cần nhập mã pin để đăng nhập:",
-'twofactor_title'		=>	"Nhập mã pin",
+'twofactor_title'		=>	"Nhập mã PIN",
 'twofactor_subj'		=>	"Mã PIN sử dụng một lần để xác thực",
 'twofactor_err_1'		=>	"Trước khi nhập mã PIN, bạn phải đăng nhập vào trang web bằng Tên đăng nhập và mật khẩu",
-'twofactor_err_2'		=>	"Bạn chưa nhập mã pin",
+'twofactor_err_2'		=>	"Bạn chưa nhập mã PIN",
 'twofactor_err_3'		=>	"Thông tin đăng nhập không đúng. Tải lại trang và nhập Tên đăng nhập và mật khẩu của bạn.",
 'twofactor_err_4'		=>	"Mã PIN đã hết hạn. Bạn chỉ có thể nhập mã trong vòng 15 phút sau khi yêu cầu.",
 'twofactor_err_5'		=>	"Mã PIN không hợp lệ. Còn lại {attempt} lần thử.",
@@ -501,7 +570,7 @@ $lang = array (
 // 5.3
 'bb_t_emo'        =>    "Chèn biểu tượng cảm xúc",
 'pm_to'           =>    "Người nhận",
-'approve'         =>    "(Đang đợi kiểm duyệt)",
+'approve'         =>    "(Đang chờ kiểm duyệt)",
 'ip_info'         =>    "Thông tin địa chỉ IP",
 'ip_tools'        =>    "Tìm kiếm người dùng khác",
 'ip_ban'          =>    "Cấm địa chỉ",
@@ -558,7 +627,7 @@ $lang = array (
 's_fscnum'			=>	"Số lượng bình luận",
 's_fsnnum'			=>	"Số lượt xem",
 's_fsaut'			=>	"Tên tác giả",
-'s_fscat'			=>	"DAnh mục",
+'s_fscat'			=>	"Danh mục",
 's_fsrate'			=>	"Đánh giá bài viết",
 's_fsdesc'			=>	"Giảm dần",
 's_fsasc'			=>	"Tăng dần",
@@ -784,12 +853,12 @@ $lang = array (
 'news_err_6'		=>	"giây",
 'news_err_7'		=>	"<li>Xin lỗi, bạn đã nhập tên hoặc e-mail của người dùng đã đăng ký. Nếu bạn là người dùng này, bạn cần phải đăng nhập thông qua bảng điều khiển.</li>",
 'news_err_9'		=>	"Bạn phải nhập \"Tên\" và không được để trống.",
-'news_err_10'		=>	"e-mail không hợp lệ.",
+'news_err_10'		=>	"E-mail không hợp lệ.",
 'news_err_11'		=>	"Bạn phải nhập \"Bình luận\" và không được để trống.",
 'news_err_12'		=>	"Rất tiếc, trang này không khả dụng với bạn, địa chỉ của trang có thể đã bị thay đổi hoặc bị xóa. Vui lòng sử dụng tìm kiếm.",
 'news_err_13'		=>	"<li>Bạn không được phép chỉnh sửa hồ sơ này!</li>",
 'news_err_14'		=>	"<li>Đã xảy ra lỗi khi tải lên hình ảnh.</li>",
-'news_err_15'		=>	"<li>Chỉ các tập tin JPG, PNG và GIF được phép tải lên.</li>",
+'news_err_15'		=>	"<li>Chỉ các tập tin JPG, PNG, GIF và WebP được phép tải lên.</li>",
 'news_err_16'		=>	"<li>Dung lượng tối đa của hình ảnh tải lên không được vượt quá {size} Kb.</li>",
 'news_err_17'		=>	"<li>Mật khẩu cũ không hợp lệ!</li>",
 'news_err_18'		=>	"<li>Hai mật khẩu phải giống nhau!</li>",
@@ -868,6 +937,7 @@ $langtimezones = array(
     'US/Hawaii'            => "(GMT-10:00) Hawaii",
     'US/Alaska'            => "(GMT-09:00) Alaska",
     'US/Pacific'           => "(GMT-08:00) Pacific time (US & Canada)",
+    'America/Los_Angeles'  => "(GMT-08:00) Los Angeles",
     'America/Tijuana'      => "(GMT-08:00) Tijuana",
     'US/Arizona'           => "(GMT-07:00) Arizona",
     'US/Mountain'          => "(GMT-07:00) Mountain time (US and Canada)",
@@ -937,7 +1007,7 @@ $langtimezones = array(
     'Asia/Kolkata'         => "(GMT+05:30) Bombay, Calcutta, Madras, New Delhi, Colombo",
     'Asia/Kathmandu'       => "(GMT+05:45) Kathmandu",
     'Asia/Almaty'          => "(GMT+06:00) Almaty, Astana",
-    'Asia/Novosibirsk'     => "(GMT+06:00) Novosibirsk",
+    'Asia/Novosibirsk'     => "(GMT+07:00) Novosibirsk",
     'Asia/Jakarta'         => "(GMT+07:00) Bangkok, Hanoi, Jakarta",
     'Asia/Krasnoyarsk'     => "(GMT+07:00) Krasnoyarsk",
     'Asia/Hong_Kong'       => "(GMT+08:00) Hong Kong, Chongqing",
@@ -1050,6 +1120,15 @@ $customlangdate = array (
 
 );
 
+$langcommentsweekdays = array(
+'Sunday'    =>    "Chủ nhật",
+'Monday'    =>    "Thứ 2",
+'Tuesday'   =>    "Thứ 3",
+'Wednesday' =>    "Thứ 4",
+'Thursday'  =>    "Thứ 5",
+'Friday'    =>    "Thứ 6",
+'Saturday'  =>    "Thứ 7"
+);
 
 $f  = array('Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12');
 $r  = array('Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12');
